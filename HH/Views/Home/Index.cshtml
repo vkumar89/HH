@@ -1,29 +1,29 @@
-﻿@{
+﻿@model IEnumerable<HH.Models.Exercise>
+@{
     ViewBag.Title = "Home Page";
 }
 
 <main>
-    
-    <table align="center"border="1"width="100%" class="accordion-body">
-        <tr style=" margin:20px">
-            <td><img src="~/Images/Logo.png" width="300"height="300"/></td>
-            <td><img src="~/Images/Logo.png" width="300"height="300"/></td>
-            <td><img src="~/Images/Logo.png" width="300"height="300"/></td>
-           
-        </tr>
-       <tr style=" margin:20px">
-            <td><img src="~/Images/Logo.png" width="300"height="300"/></td>
-            <td><img src="~/Images/Logo.png" width="300"height="300"/></td>
-            <td><img src="~/Images/Logo.png" width="300"height="300"/></td>
-           
-        </tr>
-       <tr style=" margin:20px">
-            <td><img src="~/Images/Logo.png" width="300"height="300"/></td>
-            <td><img src="~/Images/Logo.png" width="300"height="300"/></td>
-            <td><img src="~/Images/Logo.png" width="300"height="300"/></td>
-           
-        </tr>
-       
-    </table>
-   
+    <div class="container">
+        <div class="row">
+            @foreach (var Exercise in Model)
+            {
+                <div class="col-6" style="padding:50px">
+                    <div class="card">
+                        <img class="card-img-top" src='/Uploads/@Exercise.Images' alt="No Image" width="250" height="250" />
+                        <div class="card-body">
+                            <h4 class="card-title " style="text-align:center">@Html.DisplayFor(E => Exercise.Name)</h4>
+                           
+                           
+                            <a href="http://localhost:49861/Exercise/Details/@Html.DisplayFor(E=>Exercise.ExerciseID)" class="link-dark"> <button class="btn btn-outline-success align-content-center card-body" style="width:100%"> View</button></a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+
+
 </main>

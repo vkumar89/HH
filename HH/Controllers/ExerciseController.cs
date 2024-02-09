@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using System.IO;
 
 namespace HH.Controllers
 {
@@ -27,7 +28,7 @@ namespace HH.Controllers
         // GET: Exercise/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(dc.ExerciseList.Find(id));
         }
         #endregion
 
@@ -39,11 +40,24 @@ namespace HH.Controllers
 
         // POST: Exercise/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Exercise exercise, HttpPostedFileBase selectedFile)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (selectedFile != null)
+                {
+                    //Checking whether the folder "Uploads" is exists or not and creating it if not exists
+                    string PhysicalPath = Server.MapPath("~/Uploads/");
+                    if (!Directory.Exists(PhysicalPath))
+                    {
+                        Directory.CreateDirectory(PhysicalPath);
+                    }
+                    selectedFile.SaveAs(PhysicalPath + selectedFile.FileName);
+                    exercise.Images = selectedFile.FileName;
+                }
+
+                dc.ExerciseList.Add(exercise);
+                dc.SaveChanges();
 
                 return RedirectToAction("Index");
             }

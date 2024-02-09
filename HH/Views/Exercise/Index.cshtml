@@ -3,42 +3,22 @@
     ViewBag.Title = "Index";
 }
 
-<main>
-    <table align="center">
 
+<div class="container">
+    <div class="row">
         @foreach (var Exercise in Model)
         {
-            <tr>
-                <td style="padding:50px">
-                    <div class="card">
-                        <img src="~/Images/Logo.png" alt="Avatar" style="width:250px" height="250px">
-                        <div class="container">
-                            <h4><b>@Html.DisplayFor(E => Exercise.Name)</b></h4>
-                            <p>@Html.DisplayFor(E => Exercise.Description)</p>
-                        </div>
-                    </div>
-                </td>
-                <td style="padding:50px">
-                    <div class="card">
-                        <img src="~/Images/Logo.png" alt="Avatar" style="width:250px" height="250px">
-                        <div class="container">
-                            <h4><b>@Html.DisplayFor(E => Exercise.Name)</b></h4>
-                            <p>@Html.DisplayFor(E => Exercise.Description)</p>
-                        </div>
-                    </div>
-                </td>
-                <td style="padding:50px">
-                    <div class="card">
-                        <img src="~/Images/Logo.png" alt="Avatar" style="width:250px" height="250px">
-                        <div class="container">
-                            <h4><b>@Html.DisplayNameFor(E => E.Name)</b></h4>
-                            <p>@Html.DisplayNameFor(E => E.Description)</p>
-                        </div>
-                    </div>
-                </td>
-
-
-            </tr>
+          <div class="col-4" style="padding:25px" >
+              <div class="card">
+                  <img class="card-img-top" src='/Uploads/@Exercise.Images' alt="No Image" width="250" height="250"/>
+                  <div class="card-body">
+                      <h4 class="card-title ">@Html.DisplayFor(E => Exercise.Name)</h4>
+                      <p class="card-title">@Html.DisplayFor(E => Exercise.Description)</p>
+                      <a href="http://localhost:49861/Exercise/Details/@Html.DisplayFor(E=>Exercise.ExerciseID)" class="link-dark"> <button class="btn btn-outline-success align-content-center card-body" style="width:100%"> View</button></a>
+                  </div>
+              </div>
+          </div>
         }
-    </table>
-</main>
+    </div>
+</div>
+
