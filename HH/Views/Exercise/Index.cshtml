@@ -1,0 +1,44 @@
+﻿@model IEnumerable<HH.Models.Exercise>
+@{
+    ViewBag.Title = "Index";
+}
+
+<main>
+    <table align="center">
+
+        @foreach (var Exercise in Model)
+        {
+            <tr>
+                <td style="padding:50px">
+                    <div class="card">
+                        <img src="~/Images/Logo.png" alt="Avatar" style="width:250px" height="250px">
+                        <div class="container">
+                            <h4><b>@Html.DisplayFor(E => Exercise.Name)</b></h4>
+                            <p>@Html.DisplayFor(E => Exercise.Description)</p>
+                        </div>
+                    </div>
+                </td>
+                <td style="padding:50px">
+                    <div class="card">
+                        <img src="~/Images/Logo.png" alt="Avatar" style="width:250px" height="250px">
+                        <div class="container">
+                            <h4><b>@Html.DisplayFor(E => Exercise.Name)</b></h4>
+                            <p>@Html.DisplayFor(E => Exercise.Description)</p>
+                        </div>
+                    </div>
+                </td>
+                <td style="padding:50px">
+                    <div class="card">
+                        <img src="~/Images/Logo.png" alt="Avatar" style="width:250px" height="250px">
+                        <div class="container">
+                            <h4><b>@Html.DisplayNameFor(E => E.Name)</b></h4>
+                            <p>@Html.DisplayNameFor(E => E.Description)</p>
+                        </div>
+                    </div>
+                </td>
+
+
+            </tr>
+        }
+    </table>
+</main>
