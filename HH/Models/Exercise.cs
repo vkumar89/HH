@@ -10,10 +10,15 @@ namespace HH.Models
     {
         [Key]
         public int ExerciseID { get; set; }
+
+        [Required(ErrorMessage ="The Name of Exercise can't be Empty")]
         public string Name { get; set; }
+
+        [Required (ErrorMessage = "The Image Should be Selected")]
         public string Images { get; set; }
         public string Video { get; set; }
 
+        [Required (ErrorMessage = "Description Can't be Empty")]
         public string Description { get; set; }
         public string DifficultyLevel { get; set; }
         public string EquipmentRequired { get; set; }

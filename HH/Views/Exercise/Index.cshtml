@@ -10,12 +10,14 @@
         {
           <div class="col-4" style="padding:25px" >
               <div class="card">
-                  <img class="card-img-top" src='/Uploads/@Exercise.Images' alt="No Image" width="250" height="250"/>
-                  <div class="card-body">
-                      <h4 class="card-title ">@Html.DisplayFor(E => Exercise.Name)</h4>
-                      <p class="card-title">@Html.DisplayFor(E => Exercise.Description)</p>
-                      <a href="http://localhost:49861/Exercise/Details/@Html.DisplayFor(E=>Exercise.ExerciseID)" class="link-dark"> <button class="btn btn-outline-success align-content-center card-body" style="width:100%"> View</button></a>
-                  </div>
+                  <a href="http://localhost:49861/Exercise/Details/@Html.DisplayFor(E=>Exercise.ExerciseID)" class="link-dark">
+                      <img class="card-img-top" src='/Uploads/@Exercise.Images' alt="No Image" width="250" height="250" />
+                      <div class="card-body">
+                          <h4 class="card-title ">@Html.DisplayFor(E => Exercise.Name)</h4>
+                          <p class="card-title">@Html.DisplayFor(E => Exercise.Description)</p>
+                          <button class="btn btn-outline-success align-content-center card-body" style="width:100%"> View</button>
+                      </div>
+                  </a>
               </div>
           </div>
         }

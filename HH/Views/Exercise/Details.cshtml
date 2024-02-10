@@ -4,18 +4,18 @@
     ViewBag.Title = "Details";
 }
 
-<table align="center" >
+<table align="center">
     <tr><td><h1>@Html.DisplayFor(E => E.Name) Exercise</h1></td></tr>
     <tr>
         <td>
             <img class="card-img-top" src='/Uploads/@Model.Images' alt="No Image" width="250" height="250" />
         </td>
     </tr>
-    
+
 
 </table>
 
-<table align="center" border="1" class="table table-primary table-striped-columns">
+<table align="center" border="1" class="table table-primary table-striped-columns" style="width:100%">
     <tr>
         <td>
             @Html.DisplayNameFor(E => E.Description)
@@ -49,4 +49,10 @@
         </td>
     </tr>
 </table>
+<hr />
+<div >
+    <a href="http://localhost:49861/Exercise" class="link-dark"> <button class="btn btn-outline-danger " style="width:100%"> Back To List</button></a>
+</div>
+
+
 
