@@ -219,10 +219,10 @@
     <Content Include="Views\Exercise\Index.cshtml" />
     <Content Include="Views\Exercise\Create.cshtml" />
     <Content Include="Views\Exercise\Details.cshtml" />
+    <Content Include="Views\WorkoutRoutine\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\WorkoutRoutine\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
